@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <form action="cadastraCliente.php" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+                <label for="dados">Nome:</label>
+                <input type="text" id="dados" name="dados" maxlength="50" minlength="2" required autofocus>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <!--<input type="text" id="cpf" name="cpf">-->
+                <!-- <input type="text" name="cpf"pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">-->
+                <!--<input type="text" name="cpf" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{2}">-->
+                <input type="text" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="888.888.888-88" required>
+            </div>
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div>
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento">
+            </div>
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo">
+                    <option value="" disabled selected>Selecione</option> <!-- Texto e valor vazios -->
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+            </div>
+            <fieldset>
+                <legend>Estado Civil:</legend>
+                <div>
+                    <input type="radio" id="solteiro" name="estadocivil" value="solteiro">
+                    <label for="solteiro">Solteiro</label>
+                </div>
+                <div>
+                    <input type="radio" id="casado" name="estadocivil" value="casado">
+                    <label for="casado">Casado</label>
+                </div>
+                <div>
+                    <input type="radio" id="divorciado" name="estadocivil" value="divorciado">
+                    <label for="divorciado">Divorciado</label>
+                </div>
+                <div>
+                    <input type="radio" id="viuvo" name="estadocivil" value="viuvo">
+                    <label for="viuvo">Viuvo</label>
+                </div>
+            </fieldset>
+            <div>
+                <label for="hobby">Hobby:</label>
+                <input type="text" id="hobby" name="hobby" value="Leitura" readonly>
+            </div>
+            <div>
+                <!-- Campo oculto (hidden) -->
+                <input type="hidden" name="usuario_id" value="12345">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço de Entrega</legend>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+            </div>
+            <div>
+                <label for="logradouro">Tipo de Logradouro:</label>
+                <select name="logradouro" id="logradouro" required>
+                    <option value="" disabled selected>Selecione</option> <!-- Texto e valor vazios -->
+                    <option value="rua">Rua</option>
+                    <option value="avenida">Avenida</option>
+                    <option value="praca">Praça</option>
+                    <option value="rodovias">Rodovias</option>
+                    <option value="outro">Outros</option>
+                </select>
+            </div>
+            <div>
+                <label for="log">Logradouro:</label>
+                <input type="text" id="log" name="log" required>
+            </div>
+            <div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+            </div>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+            <fieldset>
+                <legend>Interesses:</legend>
+                <div>
+                    <input type="checkbox" id="filmes" name="filmes[]" value="filmes">
+                    <label for="filmes">Filmes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="informatica" name="informartica[]" value="informartica">
+                    <label for="informatica">Informática</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="games" name="games[]" value="games">
+                    <label for="games">Games</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="livros" name="livros[]" value="livros">
+                    <label for="livros">Livros</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="roupas" name="roupas[]" value="roupas">
+                    <label for="roupas">Roupas</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Informações Complementares:</legend>
+                <textarea name="mensagem" id="mensagem" placeholder="Deixe sua mensagem aqui..."></textarea>
+            </fieldset>
+            <div>
+                <label for="myfile">Selecione o arquivo:</label>
+                <input type="file" id="myfile" name="myfile">
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

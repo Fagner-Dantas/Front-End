@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Forms</h1>
+    <h2>Radio</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nostrum dolor suscipit quaerat reprehenderit illo beatae rem itaque praesentium, quis minima, reiciendis non possimus voluptatum minus et placeat atque ex?</p>
+    <form action="#">
+        <input type="radio" name="estadocivil" value="solteiro" checked>Solteiro <input type="radio" name="estadocivil" value="casado">Casado <input type="radio" name="estadocivil" value="divorciado">Divorciado
+    </form>
+
+    <form action="#">
+        <fieldset>
+            <legend>Escolha o Estado Civil</legend>
+            <div>
+                <input type="radio" id="solteiro" name="estadocivil" value="solteiro">
+                <label for="solteiro">Solteiro</label>
+            </div>
+            <div>
+                <input type="radio" id="casado" name="estadocivil" value="casado">
+                <label for="casado">Casado</label>
+            </div>
+            <div>
+                <input type="radio" id="divorciado" name="estadocivil" value="divorciado">
+                <label for="divorciado">Divorciado</label>
+            </div>
+        </fieldset>
+    </form>
+    <hr>
+    <h2>Checkbox</h2>
+    <form action="#"> 
+        <input type="checkbox" id="natação" name="esportes[]" value="natação" checked> Natação
+        <input type="checkbox" id="ciclismo" name="esportes[]" value=“ciclismo" checked> Ciclismo
+        <input type="checkbox" id="futebol" name="esportes[]" value="futebol"> Futebol
+        <input type="checkbox" id="hipismo" name="esportes[]" value="hipismo"> Hipismo
+    </form>
+
+    <form action="#">
+        <fieldset>
+            <legend>Esporte de Interesse</legend>
+            <div>
+                <input type="checkbox" id="natação" name="esportes[]" checked>
+                <label for="natação">Natação</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ciclismo" name="esportes[]" checked>
+                <label for="ciclismo">Ciclismo</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Futebol" name="esportes[]" checked>
+                <label for="futebol">Futebol</label>
+            </div>
+            <div>
+                <input type="checkbox" id="hipismo" name="esportes[]" checked>
+                <label for="hipismo">Hipismo</label>
+            </div>
+        </fieldset>
+    </form>
+    <hr>
+    <h2>Data e Hora</h2>
+    <form action="#">
+        <input type="datetime-local">
+    </form>
+    <hr>
+    <h2>Mês e semana</h2>
+    <form action="#">
+        <input type="month">
+    </form>
+    <hr>
+    <h2>Date (observação)</h2>
+    <form action="#">
+        <input type="datetime">
+    </form>
+    <hr>
+    <h3>E-mail</h3>
+    <form action="#">
+        <input type="email">
+    </form>
+    <hr>
+    <h3>Telefone</h3>
+    <form action="#">
+        <input type="tel">
+    </form>
+    <hr>
+    <h3>Number Range</h3>
+    <form action="#">
+        <input type="number">
+        <input type="range">
+    </form>
+    <hr>
+    <h3>Hidden (Campo oculto)</h3>
+    <form action="#">
+        <input type="hidden">
+    </form>
+    <hr>
+    <h3>Cor</h3>
+    <form action="#">
+        <input type="color">
+    </form>
+    <hr>
+    <h2>File</h2>
+    <form action="#">
+        <input type="file" accept="image/*">
+        <input type="file" accept=".png, .jpg, .jpeg"> 
+    </form>
+    <hr>
+    <h2>Select</h2>
+    <form action="#">
+        <select name="teste" id="estado">
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="CE">Ceará</option>
+        </select>
+    </form>
+    <hr>
+    <h2>TextArea</h2>
+    <form action="#">
+        <textarea name="xinha" id="coment"></textarea> Deixe seu comentário:
+    </form>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint quibusdam possimus, ratione alias optio adipisci, recusandae est earum perspiciatis vitae veritatis? Harum, quam repellat hic architecto saepe odio sunt perspiciatis!</p>
+</body>
+</html>
