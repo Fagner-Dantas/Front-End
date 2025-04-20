@@ -4,7 +4,9 @@
 }
 
 body {
-    
+    width: 60vw;
+    margin: auto;
+    padding: 30px;
     background-color: #ddd;
     color: #444;
     font-family: "Helvetica Neue";
@@ -12,9 +14,8 @@ body {
 }
 
 main {
-    width: 60vw;
+    
     background-color: white;
-    margin: 20px 20% 20px 20%;
     padding: 30px;
     border-radius: 10px;
 }
