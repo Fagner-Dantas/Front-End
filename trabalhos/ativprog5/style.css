@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("./fonte/HelveticaNeue\ Regular.ttf");
+}
+
+body {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    background-color: #ddd;
+    color: #444;
+    font-family: "Helvetica Neue";
+    line-height: 1.5em;
+}
+
+main {
+    
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: rgb(140, 76,8);
+}
+
+h2 {
+    user-select: none;
+    cursor: pointer;
+}
+
+.linha-divisoria {
+    border-top: 2px solid gray; 
+    margin: 20px 0;             
+}
+

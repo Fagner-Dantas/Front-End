@@ -1,0 +1,172 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 18px;
+    color: black;
+}
+
+body > p > .descricao {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Para centralizar imagens de bloco */
+    margin: 20px auto; /* Centraliza as imagens */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+}
+
+/* Navegação */
+nav {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px; /* Você pode ajustar ou remover se preferir */
+
+    /* PROPRIEDADES PARA FIXAR O MENU */
+    position: sticky; /* Permite que o elemento seja fixo quando atinge um ponto de rolagem */
+    top: 0;           /* Fixa o elemento no topo da tela (0 pixels do topo) */
+    width: 100%;      /* Garante que o menu ocupe toda a largura */
+    z-index: 1000;    /* Garante que o menu fique acima de outros elementos na rolagem */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacá-lo */
+}
+
+/* O restante do CSS da navegação permanece o mesmo */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 4px;
+}
+
+/* Estilos para seções de viagem */
+.viagem-secao {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.viagem-secao:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Botões (ainda podemos ter o estilo caso adicione outros botões) */
+.btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Classes para animação de fade-in das imagens (se quiser manter) */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+footer {
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+}
+
+footer >p > a{
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: gray;
+}

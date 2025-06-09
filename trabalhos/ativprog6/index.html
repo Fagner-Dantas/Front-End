@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <form action="cadastraCliente.php" method="post" class="container" id="cadastroForm">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+                <label for="dados">Nome:</label>
+                <input type="text" id="dados" name="dados" maxlength="50" minlength="2" required autofocus>
+                <div class="error-message" id="error-dados"></div>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="error-e-mail"></div>
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
+                <div class="error-message" id="error-cpf"></div>
+            </div>
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+                <div class="error-message" id="error-idade"></div>
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+                <div class="error-message" id="error-telefone"></div>
+            </div>
+            <div>
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento">
+                <div class="error-message" id="error-nascimento"></div>
+            </div>
+
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+                <div class="error-message" id="error-sexo"></div>
+            </div>
+
+            <div>
+                <label for="estadoCivil">Estado Civil:</label>
+                <select name="estadoCivil" id="estadoCivil" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="S">Solteiro</option>
+                    <option value="C">Casado</option>
+                    <option value="D">Divorciado</option>
+                    <option value="V">Viúvo</option>
+                </select>
+                <div class="error-message" id="error-estadoCivil"></div>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço de Entrega</legend>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="xxxxxxxx" required>
+                <div class="error-message" id="error-cep"></div>
+            </div>
+            <div>
+                <label for="logradouro">Tipo de Logradouro:</label>
+                <select name="logradouro" id="logradouro" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="rua">Rua</option>
+                    <option value="avenida">Avenida</option>
+                    <option value="praca">Praça</option>
+                    <option value="rodovias">Rodovias</option>
+                    <option value="outro">Outros</option>
+                </select>
+                <div class="error-message" id="error-logradouro"></div>
+            </div>
+            <div>
+                <label for="log">Logradouro:</label>
+                <input type="text" id="log" name="log" required>
+                <div class="error-message" id="error-log"></div>
+            </div>
+            <div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+                <div class="error-message" id="error-bairro"></div>
+            </div>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+                <div class="error-message" id="error-cidade"></div>
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+                <div class="error-message" id="error-estado"></div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações de Acesso</legend>
+            <div>
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <div class="error-message" id="error-usuario"></div>
+            </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <div class="error-message" id="error-senha"></div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+            <label for="interesses">Interesses:</label>
+            <select name="interesses" id="interesses" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="filme">Filmes</option>
+                <option value="informatica">Informática</option>
+                <option value="Games">Games</option>
+                <option value="livros">Livros</option>
+                <option value="roupas">Roupas</option>
+            </select>
+            <div class="error-message" id="error-interesses"></div>
+
+            <label for="complementos">Complementos:</label>
+            <textarea name="mensagem" id="complementos" placeholder="Deixe sua mensagem aqui..."></textarea>
+            <div class="error-message" id="error-complementos"></div>
+            <div>
+                <label for="myfile">Anexar arquivo:</label>
+                <input type="file" id="myfile" name="myfile">
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('cadastroForm');
+        const cpfInput = document.getElementById('cpf');
+        const telefoneInput = document.getElementById('telefone');
+        const cepInput = document.getElementById('cep');
+        const usuarioInput = document.getElementById('usuario');
+        const senhaInput = document.getElementById('senha');
+
+        // Função para exibir mensagem de erro
+        function displayError(fieldId, message) {
+            const errorDiv = document.getElementById(`error-${fieldId}`);
+            if (errorDiv) {
+                errorDiv.textContent = message;
+            }
+        }
+
+        // Função para limpar mensagem de erro
+        function clearError(fieldId) {
+            const errorDiv = document.getElementById(`error-${fieldId}`);
+            if (errorDiv) {
+                errorDiv.textContent = '';
+            }
+        }
+
+        // Validação de campos vazios ao tentar enviar o formulário
+        form.addEventListener('submit', function(event) {
+            let hasError = false;
+
+            // Limpa todas as mensagens de erro antes de validar
+            document.querySelectorAll('.error-message').forEach(div => div.textContent = '');
+
+            const inputs = form.querySelectorAll('input[type="text"], input[type="e-mail"], input[type="number"], input[type="tel"], input[type="password"], textarea, select');
+
+            inputs.forEach(input => {
+                if (input.hasAttribute('required') && input.value.trim() === '') {
+                    displayError(input.id, `O campo "${input.previousElementSibling.textContent.replace(':', '')}" não pode ser enviado em branco.`);
+                    hasError = true;
+                }
+            });
+
+            // Validação específica para o CPF
+            if (cpfInput.value.trim() === '') {
+                displayError('cpf', 'O campo "CPF" não pode ser enviado em branco.');
+                hasError = true;
+            } else if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value)) {
+                displayError('cpf', 'CPF inválido. Use o formato xxx.xxx.xxx-xx.');
+                hasError = true;
+            }
+
+            // Validação específica para o Telefone
+            if (telefoneInput.value.trim() === '') {
+                displayError('telefone', 'O campo "Telefone" não pode ser enviado em branco.');
+                hasError = true;
+            } else if (!/^\(\d{2}\) \d{5}-\d{4}$/.test(telefoneInput.value)) {
+                displayError('telefone', 'Telefone inválido. Use o formato (xx) xxxxx-xxxx.');
+                hasError = true;
+            }
+
+            // Validação específica para o CEP
+            if (cepInput.value.trim() === '') {
+                displayError('cep', 'O campo "CEP" não pode ser enviado em branco.');
+                hasError = true;
+            } else if (!/^\d{8}$/.test(cepInput.value)) {
+                displayError('cep', 'CEP inválido. Use o formato xxxxxxxx (8 dígitos).');
+                hasError = true;
+            }
+
+            // Validação de Usuário
+            if (usuarioInput.value.trim() === '') {
+                displayError('usuario', 'O campo "Usuário" não pode ser enviado em branco.');
+                hasError = true;
+            } else if (usuarioInput.value.length < 5) {
+                displayError('usuario', 'O usuário deve ter no mínimo 5 caracteres.');
+                hasError = true;
+            }
+
+            // Validação de Senha
+            if (senhaInput.value.trim() === '') {
+                displayError('senha', 'O campo "Senha" não pode ser enviado em branco.');
+                hasError = true;
+            } else {
+                const senha = senhaInput.value;
+                const hasNumber = /[0-9]/.test(senha);
+                const hasLetter = /[a-zA-Z]/.test(senha);
+                const hasSymbol = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~` ]/.test(senha); // Inclui espaço em branco e outros símbolos comuns
+                if (senha.length < 8 || !hasNumber || !hasLetter || !hasSymbol) {
+                    displayError('senha', 'A senha deve conter no mínimo 8 caracteres, números, letras e símbolos.');
+                    hasError = true;
+                }
+            }
+
+            if (hasError) {
+                event.preventDefault(); // Impede o envio do formulário
+            }
+        });
+
+        // Máscara para CPF
+        cpfInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+            if (value.length > 11) {
+                value = value.substring(0, 11);
+            }
+            if (value.length > 9) {
+                value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+            } else if (value.length > 6) {
+                value = value.replace(/^(\d{3})(\d{3})(\d{3})$/, '$1.$2.$3');
+            } else if (value.length > 3) {
+                value = value.replace(/^(\d{3})(\d{3})$/, '$1.$2');
+            }
+            e.target.value = value;
+            clearError('cpf');
+        });
+
+        // Máscara para Telefone
+        telefoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+            if (value.length > 11) {
+                value = value.substring(0, 11);
+            }
+            if (value.length > 10) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (value.length > 6) {
+                value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            }
+            e.target.value = value;
+            clearError('telefone');
+        });
+
+        // Máscara para CEP
+        cepInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+            if (value.length > 8) {
+                value = value.substring(0, 8);
+            }
+            e.target.value = value;
+            clearError('cep');
+        });
+
+        // Listener para limpar erro quando o usuário digita
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                clearError(this.id);
+            });
+        });
+
+    </script>
+</body>
+</html>
